@@ -13,6 +13,6 @@ class Tarea extends Model
         'fechaHora',
         'tiempoAsignado',
         'importancia',
-        'estatus'
+        'status'
     ];
 }
