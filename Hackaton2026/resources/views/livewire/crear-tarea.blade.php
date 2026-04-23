@@ -23,21 +23,21 @@
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Nombre de la Tarea</label>
                         <input type="text"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            wire:model="nombreTarea">
+                            wire:model="nombreTarea" minlength="1" maxlength="255" required>
                     </div>
 
                     <div class="md:col-span-8">
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Descripción (opcional)</label>
                         <input type="text"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            wire:model="descripcion">
+                            wire:model="descripcion" maxlength="255">
                     </div>
 
                     <div class="md:col-span-3">
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Fecha y Hora</label>
                         <input type="datetime-local"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            wire:model="fechaHora">
+                            wire:model="fechaHora" required>
                         @error('fechaHora')
                             <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span>
                         @enderror
@@ -47,14 +47,14 @@
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Tiempo (min)</label>
                         <input type="number"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            placeholder="Ej. 60" wire:model="tiempoAsignado">
+                            placeholder="Ej. 60" wire:model="tiempoAsignado" required min="1">
                     </div>
 
                     <div class="md:col-span-3">
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Importancia</label>
                         <select
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            wire:model="importancia">
+                            wire:model="importancia" required>
                             <option value="">Seleccionar...</option>
                             <option value="3">Baja</option>
                             <option value="2">Media</option>
